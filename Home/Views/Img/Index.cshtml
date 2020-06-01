@@ -1,0 +1,32 @@
+﻿@model Home.Models.ImageClass
+@{
+    ViewData["Title"] = "Index";
+}
+<center>
+    <h1>Домашняя работа № 1</h1>
+    <form method="post" enctype="multipart/form-data" asp-controller="Img" asp-action="Index">
+        <input type="file" name="imgfile" />
+        <input type="submit" value="Сохранить" />
+        <hr />
+        @*<table class="table">
+            <tr>
+                <th>Название файла</th>
+                <th>Файл</th>
+                <th>Действие</th>
+            </tr>
+            @foreach (var item in Model.Fileimage)
+            {
+        <tr>
+            <td>@item.Name</td>
+            <td><img src="~/UploadFile/@item.Name" height="80" width="120" /></td>
+            <td><a href="@Url.Action("Delete", "Img", new { imgdel=@item.Name})">Удалить</a></td>
+            <td><a href="@Url.Action("Download", "Img" , new { imgdel=@item.Name})">Скачать</a></td>
+        </tr>
+            }
+        </table>*@ 
+    
+    </form>
+</center>
+
+
+
