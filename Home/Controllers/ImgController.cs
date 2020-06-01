@@ -57,6 +57,12 @@ namespace Home.Controllers
             return RedirectToAction("Index");
         }
 
+        public VirtualFileResult Download(string imgdel)
+        {
+            var filepath = Path.Combine("~/UploadFile/", imgdel);
+            return File(filepath, "text/plain", imgdel);
+        }
+
 
 
     }
