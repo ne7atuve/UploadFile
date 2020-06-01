@@ -8,7 +8,7 @@
         <input type="file" name="imgfile" />
         <input type="submit" value="Сохранить" />
         <hr />
-        @*<table class="table">
+        <table class="table">
             <tr>
                 <th>Название файла</th>
                 <th>Файл</th>
@@ -16,15 +16,13 @@
             </tr>
             @foreach (var item in Model.Fileimage)
             {
-        <tr>
-            <td>@item.Name</td>
-            <td><img src="~/UploadFile/@item.Name" height="80" width="120" /></td>
-            <td><a href="@Url.Action("Delete", "Img", new { imgdel=@item.Name})">Удалить</a></td>
-            <td><a href="@Url.Action("Download", "Img" , new { imgdel=@item.Name})">Скачать</a></td>
-        </tr>
+            <tr>
+                <td>@item.Name.</td>
+                <td><img src="~/UploadFile/@item.Name" height="80" width="120" /></td>
+                <td><a href="@Url.Action("Delete", "Img", new { imgdel=@item.Name})">Удалить</a></td>
+            </tr>
             }
-        </table>*@ 
-    
+        </table>
     </form>
 </center>
 

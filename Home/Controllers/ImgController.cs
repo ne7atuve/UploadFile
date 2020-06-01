@@ -46,7 +46,16 @@ namespace Home.Controllers
             return RedirectToAction("Index");
         }
 
-
+        public IActionResult Delete(string imgdel)
+        {
+            imgdel = Path.Combine(_iweb.WebRootPath, "UploadFile", imgdel);
+            FileInfo fi = new FileInfo(imgdel);
+            if (fi != null)
+            {
+                System.IO.File.Delete(imgdel);
+            }
+            return RedirectToAction("Index");
+        }
 
 
 
